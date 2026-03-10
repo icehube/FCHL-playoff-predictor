@@ -66,16 +66,18 @@ Key features:
 
 ```
 FCHL-predictor/
-├── app.py                        # Streamlit UI (3 tabs: Standings, Players, Roster Builder)
+├── app.py                        # Streamlit UI (4 tabs: Standings, Players, Roster Builder, Progress Tracker)
 ├── data_loader.py                # CSV parsing, name fuzzy matching, schedule stat derivation
 ├── projections.py                # Projection math (per-game rates, goalie start scaling)
+├── progress.py                   # Progress history persistence and chart data preparation
 ├── requirements.txt              # streamlit, pandas, thefuzz, python-Levenshtein
 ├── README.md                     # User-facing documentation (keep in sync with changes)
 └── data/
     ├── FCHL Players - Sheet1.csv # FCHL fantasy rosters (6 teams, ~20 players each)
     ├── nhl-202526-asplayed.csv   # Full 2025-26 NHL schedule (played + remaining games)
     ├── skaters.csv               # NHL skater season stats (filter situation=="all")
-    └── goalies.csv               # NHL goalie season stats (filter situation=="all")
+    ├── goalies.csv               # NHL goalie season stats (filter situation=="all")
+    └── progress_history.json     # Daily progress snapshots (auto-created)
 ```
 
 ---

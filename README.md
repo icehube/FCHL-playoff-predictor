@@ -8,6 +8,7 @@ A personal Streamlit app that simulates the remaining 2025-26 NHL season and pro
 - **Per-game rate model** — skater goals/assists projected from season-to-date pace
 - **Goalie tracking** — wins and shutouts derived from completed schedule results
 - **Roster Builder** — swap players between teams to evaluate trades or lineup changes
+- **Progress Tracker** — record daily snapshots, chart projected vs actual standings over time
 - **Editable standings** — update each team's current point total in the sidebar
 
 ## Scoring
@@ -30,15 +31,17 @@ streamlit run app.py
 
 ```
 FCHL-predictor/
-├── app.py             # Streamlit UI (Standings / Player Projections / Roster Builder tabs)
+├── app.py             # Streamlit UI (4 tabs: Standings, Players, Roster Builder, Progress Tracker)
 ├── data_loader.py     # CSV parsing, name matching, schedule stat derivation
 ├── projections.py     # Projection math (per-game rates, goalie start scaling)
+├── progress.py        # Progress history persistence and chart data preparation
 ├── requirements.txt
 └── data/
     ├── FCHL Players - Sheet1.csv   # FCHL fantasy rosters (6 teams)
     ├── nhl-202526-asplayed.csv     # Full 2025-26 NHL schedule
     ├── skaters.csv                 # NHL skater season stats
-    └── goalies.csv                 # NHL goalie season stats
+    ├── goalies.csv                 # NHL goalie season stats
+    └── progress_history.json       # Daily progress snapshots (auto-created)
 ```
 
 ## Data

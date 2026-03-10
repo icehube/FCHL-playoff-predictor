@@ -1,0 +1,602 @@
+[
+  {
+    "name": "Dylan Larkin",
+    "position": "F",
+    "fchl_team": "BOT"
+  },
+  {
+    "name": "Tim Stutzle",
+    "position": "F",
+    "fchl_team": "BOT"
+  },
+  {
+    "name": "Drake Batherson",
+    "position": "F",
+    "fchl_team": "BOT"
+  },
+  {
+    "name": "Nick Schmaltz",
+    "position": "F",
+    "fchl_team": "BOT"
+  },
+  {
+    "name": "Jared McCann",
+    "position": "F",
+    "fchl_team": "BOT"
+  },
+  {
+    "name": "Miro Heiskanen",
+    "position": "D",
+    "fchl_team": "BOT"
+  },
+  {
+    "name": "Noah Dobson",
+    "position": "D",
+    "fchl_team": "BOT"
+  },
+  {
+    "name": "Scott Wedgewood",
+    "position": "G",
+    "fchl_team": "BOT"
+  },
+  {
+    "name": "Filip Gustavsson",
+    "position": "G",
+    "fchl_team": "BOT"
+  },
+  {
+    "name": "Kirill Kaprizov",
+    "position": "F",
+    "fchl_team": "LPT"
+  },
+  {
+    "name": "Kyle Connor",
+    "position": "F",
+    "fchl_team": "LPT"
+  },
+  {
+    "name": "Mark Scheifele",
+    "position": "F",
+    "fchl_team": "LPT"
+  },
+  {
+    "name": "Sidney Crosby",
+    "position": "F",
+    "fchl_team": "LPT"
+  },
+  {
+    "name": "Filip Forsberg",
+    "position": "F",
+    "fchl_team": "LPT"
+  },
+  {
+    "name": "Alex Tuch",
+    "position": "F",
+    "fchl_team": "LPT"
+  },
+  {
+    "name": "Sam Bennett",
+    "position": "F",
+    "fchl_team": "LPT"
+  },
+  {
+    "name": "Macklin Celebrini",
+    "position": "F",
+    "fchl_team": "LPT"
+  },
+  {
+    "name": "Dylan Guenther",
+    "position": "F",
+    "fchl_team": "LPT"
+  },
+  {
+    "name": "Morgan Geekie",
+    "position": "F",
+    "fchl_team": "LPT"
+  },
+  {
+    "name": "Matt Coronato",
+    "position": "F",
+    "fchl_team": "LPT"
+  },
+  {
+    "name": "Cole Sillinger",
+    "position": "F",
+    "fchl_team": "LPT"
+  },
+  {
+    "name": "Roman Josi",
+    "position": "D",
+    "fchl_team": "LPT"
+  },
+  {
+    "name": "Mikhail Sergachev",
+    "position": "D",
+    "fchl_team": "LPT"
+  },
+  {
+    "name": "MacKenzie Weegar",
+    "position": "D",
+    "fchl_team": "LPT"
+  },
+  {
+    "name": "Brock Faber",
+    "position": "D",
+    "fchl_team": "LPT"
+  },
+  {
+    "name": "Mattias Samuelsson",
+    "position": "D",
+    "fchl_team": "LPT"
+  },
+  {
+    "name": "Ivan Provorov",
+    "position": "D",
+    "fchl_team": "LPT"
+  },
+  {
+    "name": "Mackenzie Blackwood",
+    "position": "G",
+    "fchl_team": "LPT"
+  },
+  {
+    "name": "Dustin Wolf",
+    "position": "G",
+    "fchl_team": "LPT"
+  },
+  {
+    "name": "Leon Draisaitl",
+    "position": "F",
+    "fchl_team": "GVR"
+  },
+  {
+    "name": "Connor McDavid",
+    "position": "F",
+    "fchl_team": "GVR"
+  },
+  {
+    "name": "Jason Robertson",
+    "position": "F",
+    "fchl_team": "GVR"
+  },
+  {
+    "name": "Matt Boldy",
+    "position": "F",
+    "fchl_team": "GVR"
+  },
+  {
+    "name": "Nikolaj Ehlers",
+    "position": "F",
+    "fchl_team": "GVR"
+  },
+  {
+    "name": "Wyatt Johnston",
+    "position": "F",
+    "fchl_team": "GVR"
+  },
+  {
+    "name": "Trevor Zegras",
+    "position": "F",
+    "fchl_team": "GVR"
+  },
+  {
+    "name": "Joel Farabee",
+    "position": "F",
+    "fchl_team": "GVR"
+  },
+  {
+    "name": "Andre Burakovsky",
+    "position": "F",
+    "fchl_team": "GVR"
+  },
+  {
+    "name": "Kasperi Kapanen",
+    "position": "F",
+    "fchl_team": "GVR"
+  },
+  {
+    "name": "Dawson Mercer",
+    "position": "F",
+    "fchl_team": "GVR"
+  },
+  {
+    "name": "Pavel Dorofeyev",
+    "position": "F",
+    "fchl_team": "GVR"
+  },
+  {
+    "name": "Erik Karlsson",
+    "position": "D",
+    "fchl_team": "GVR"
+  },
+  {
+    "name": "Charlie McAvoy",
+    "position": "D",
+    "fchl_team": "GVR"
+  },
+  {
+    "name": "Moritz Seider",
+    "position": "D",
+    "fchl_team": "GVR"
+  },
+  {
+    "name": "Rasmus Andersson",
+    "position": "D",
+    "fchl_team": "GVR"
+  },
+  {
+    "name": "Bowen Byram",
+    "position": "D",
+    "fchl_team": "GVR"
+  },
+  {
+    "name": "Samuel Girard",
+    "position": "D",
+    "fchl_team": "GVR"
+  },
+  {
+    "name": "Frederik Andersen",
+    "position": "G",
+    "fchl_team": "GVR"
+  },
+  {
+    "name": "Spencer Knight",
+    "position": "G",
+    "fchl_team": "GVR"
+  },
+  {
+    "name": "Jack Eichel",
+    "position": "F",
+    "fchl_team": "SRL"
+  },
+  {
+    "name": "Brandon Hagel",
+    "position": "F",
+    "fchl_team": "SRL"
+  },
+  {
+    "name": "Martin Necas",
+    "position": "F",
+    "fchl_team": "SRL"
+  },
+  {
+    "name": "Jackson Blake",
+    "position": "F",
+    "fchl_team": "SRL"
+  },
+  {
+    "name": "Tom Wilson",
+    "position": "F",
+    "fchl_team": "SRL"
+  },
+  {
+    "name": "Jordan Eberle",
+    "position": "F",
+    "fchl_team": "SRL"
+  },
+  {
+    "name": "Chandler Stephenson",
+    "position": "F",
+    "fchl_team": "SRL"
+  },
+  {
+    "name": "Quinn Hughes",
+    "position": "D",
+    "fchl_team": "SRL"
+  },
+  {
+    "name": "Jake Sanderson",
+    "position": "D",
+    "fchl_team": "SRL"
+  },
+  {
+    "name": "Justin Faulk",
+    "position": "D",
+    "fchl_team": "SRL"
+  },
+  {
+    "name": "Oliver Ekman-Larsson",
+    "position": "D",
+    "fchl_team": "SRL"
+  },
+  {
+    "name": "Dmitry Orlov",
+    "position": "D",
+    "fchl_team": "SRL"
+  },
+  {
+    "name": "Tristan Jarry",
+    "position": "G",
+    "fchl_team": "SRL"
+  },
+  {
+    "name": "Nikita Kucherov",
+    "position": "F",
+    "fchl_team": "ZSK"
+  },
+  {
+    "name": "Roope Hintz",
+    "position": "F",
+    "fchl_team": "ZSK"
+  },
+  {
+    "name": "Adrian Kempe",
+    "position": "F",
+    "fchl_team": "ZSK"
+  },
+  {
+    "name": "Seth Jarvis",
+    "position": "F",
+    "fchl_team": "ZSK"
+  },
+  {
+    "name": "Nico Hischier",
+    "position": "F",
+    "fchl_team": "ZSK"
+  },
+  {
+    "name": "Mathew Barzal",
+    "position": "F",
+    "fchl_team": "ZSK"
+  },
+  {
+    "name": "Vincent Trocheck",
+    "position": "F",
+    "fchl_team": "ZSK"
+  },
+  {
+    "name": "Brock Nelson",
+    "position": "F",
+    "fchl_team": "ZSK"
+  },
+  {
+    "name": "Sean Monahan",
+    "position": "F",
+    "fchl_team": "ZSK"
+  },
+  {
+    "name": "Victor Olofsson",
+    "position": "F",
+    "fchl_team": "ZSK"
+  },
+  {
+    "name": "Gabriel Vilardi",
+    "position": "F",
+    "fchl_team": "ZSK"
+  },
+  {
+    "name": "Ryan Donato",
+    "position": "F",
+    "fchl_team": "ZSK"
+  },
+  {
+    "name": "Vince Dunn",
+    "position": "D",
+    "fchl_team": "ZSK"
+  },
+  {
+    "name": "Shayne Gostisbehere",
+    "position": "D",
+    "fchl_team": "ZSK"
+  },
+  {
+    "name": "Dougie Hamilton",
+    "position": "D",
+    "fchl_team": "ZSK"
+  },
+  {
+    "name": "Brandon Montour",
+    "position": "D",
+    "fchl_team": "ZSK"
+  },
+  {
+    "name": "Jackson LaCombe",
+    "position": "D",
+    "fchl_team": "ZSK"
+  },
+  {
+    "name": "Lane Hutson",
+    "position": "D",
+    "fchl_team": "ZSK"
+  },
+  {
+    "name": "Jake Oettinger",
+    "position": "G",
+    "fchl_team": "ZSK"
+  },
+  {
+    "name": "Lukas Dostal",
+    "position": "G",
+    "fchl_team": "ZSK"
+  },
+  {
+    "name": "Nathan MacKinnon",
+    "position": "F",
+    "fchl_team": "MAC"
+  },
+  {
+    "name": "Mikko Rantanen",
+    "position": "F",
+    "fchl_team": "MAC"
+  },
+  {
+    "name": "J.T. Miller",
+    "position": "F",
+    "fchl_team": "MAC"
+  },
+  {
+    "name": "Alex DeBrincat",
+    "position": "F",
+    "fchl_team": "MAC"
+  },
+  {
+    "name": "Alex Ovechkin",
+    "position": "F",
+    "fchl_team": "MAC"
+  },
+  {
+    "name": "Tomas Hertl",
+    "position": "F",
+    "fchl_team": "MAC"
+  },
+  {
+    "name": "Patrick Kane",
+    "position": "F",
+    "fchl_team": "MAC"
+  },
+  {
+    "name": "Jamie Benn",
+    "position": "F",
+    "fchl_team": "MAC"
+  },
+  {
+    "name": "Tyler Toffoli",
+    "position": "F",
+    "fchl_team": "MAC"
+  },
+  {
+    "name": "Andrei Kuzmenko",
+    "position": "F",
+    "fchl_team": "MAC"
+  },
+  {
+    "name": "Teuvo Teravainen",
+    "position": "F",
+    "fchl_team": "MAC"
+  },
+  {
+    "name": "Claude Giroux",
+    "position": "F",
+    "fchl_team": "MAC"
+  },
+  {
+    "name": "Morgan Rielly",
+    "position": "D",
+    "fchl_team": "MAC"
+  },
+  {
+    "name": "Thomas Harley",
+    "position": "D",
+    "fchl_team": "MAC"
+  },
+  {
+    "name": "Brent Burns",
+    "position": "D",
+    "fchl_team": "MAC"
+  },
+  {
+    "name": "Mike Matheson",
+    "position": "D",
+    "fchl_team": "MAC"
+  },
+  {
+    "name": "Jeff Petry",
+    "position": "D",
+    "fchl_team": "MAC"
+  },
+  {
+    "name": "Andrei Vasilevskiy",
+    "position": "G",
+    "fchl_team": "MAC"
+  },
+  {
+    "name": "Logan Thompson",
+    "position": "G",
+    "fchl_team": "MAC"
+  },
+  {
+    "name": "Bryan Rust",
+    "position": "F",
+    "fchl_team": "BOT"
+  },
+  {
+    "name": "Evgeni Malkin",
+    "position": "F",
+    "fchl_team": "BOT"
+  },
+  {
+    "name": "Zach Werenski",
+    "position": "D",
+    "fchl_team": "BOT"
+  },
+  {
+    "name": "Artturi Lehkonen",
+    "position": "F",
+    "fchl_team": "BOT"
+  },
+  {
+    "name": "Brayden Point",
+    "position": "F",
+    "fchl_team": "SRL"
+  },
+  {
+    "name": "Jake Guentzel",
+    "position": "F",
+    "fchl_team": "SRL"
+  },
+  {
+    "name": "William Nylander",
+    "position": "F",
+    "fchl_team": "SRL"
+  },
+  {
+    "name": "Zach Hyman",
+    "position": "F",
+    "fchl_team": "SRL"
+  },
+  {
+    "name": "Brad Marchand",
+    "position": "F",
+    "fchl_team": "SRL"
+  },
+  {
+    "name": "Jake Walman",
+    "position": "D",
+    "fchl_team": "SRL"
+  },
+  {
+    "name": "Ilya Sorokin",
+    "position": "G",
+    "fchl_team": "SRL"
+  },
+  {
+    "name": "Bo Horvat",
+    "position": "F",
+    "fchl_team": "BOT"
+  },
+  {
+    "name": "Dylan Cozens",
+    "position": "F",
+    "fchl_team": "BOT"
+  },
+  {
+    "name": "Victor Hedman",
+    "position": "D",
+    "fchl_team": "MAC"
+  },
+  {
+    "name": "Darren Raddysh",
+    "position": "D",
+    "fchl_team": "BOT"
+  },
+  {
+    "name": "Shea Theodore",
+    "position": "D",
+    "fchl_team": "BOT"
+  },
+  {
+    "name": "Artemi Panarin",
+    "position": "F",
+    "fchl_team": "BOT"
+  },
+  {
+    "name": "Mikael Granlund",
+    "position": "F",
+    "fchl_team": "BOT"
+  },
+  {
+    "name": "Jacob Trouba",
+    "position": "D",
+    "fchl_team": "BOT"
+  }
+]

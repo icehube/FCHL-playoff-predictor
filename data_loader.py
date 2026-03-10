@@ -3,6 +3,7 @@ data_loader.py — CSV parsing, name matching, and schedule stat derivation.
 """
 import csv
 import re
+from datetime import date
 from pathlib import Path
 
 import pandas as pd
@@ -48,12 +49,13 @@ NHL_TEAM_MAP: dict[str, str] = {
 }
 
 DEFAULT_FCHL_POINTS: dict[str, int] = {
-    "BOT": 828,
-    "GVR": 878,
-    "LPT": 907,
-    "MAC": 819,
-    "SRL": 829,
-    "ZSK": 858,
+    "LPT": 998,
+    "GVR": 989,
+    "ZSK": 953,
+    "BOT": 927,
+    "SRL": 918,
+    "MAC": 901,
+    
 }
 
 FCHL_TEAMS = ["BOT", "GVR", "LPT", "MAC", "SRL", "ZSK"]
@@ -176,6 +178,8 @@ def load_schedule(path: str) -> dict:
             goalie_stats[name] = {"starts": 0, "wins": 0, "shutouts": 0}
         return goalie_stats[name]
 
+    today = date.today().isoformat()  # "YYYY-MM-DD"
+
     with open(path, newline="", encoding="utf-8") as f:
         reader = csv.reader(f)
         next(reader)  # skip header
@@ -184,6 +188,7 @@ def load_schedule(path: str) -> dict:
             if len(row) < 8:
                 continue
 
+            game_date = row[0].strip()
             visitor_full = row[3].strip()
             home_full = row[5].strip()
             status = row[7].strip()
@@ -191,17 +196,22 @@ def load_schedule(path: str) -> dict:
             visitor_abbr = NHL_TEAM_MAP.get(visitor_full)
             home_abbr = NHL_TEAM_MAP.get(home_full)
 
-            if status == "Scheduled":
+            if game_date >= today:
+                # Today or future — count as remaining
                 if visitor_abbr:
                     team_remaining[visitor_abbr] = team_remaining.get(visitor_abbr, 0) + 1
                 if home_abbr:
                     team_remaining[home_abbr] = team_remaining.get(home_abbr, 0) + 1
             else:
-                # Completed game
+                # Past game — count as completed
                 if visitor_abbr:
                     team_completed[visitor_abbr] = team_completed.get(visitor_abbr, 0) + 1
                 if home_abbr:
                     team_completed[home_abbr] = team_completed.get(home_abbr, 0) + 1
+
+                # Only extract goalie stats if scores are present
+                if status == "Scheduled":
+                    continue
 
                 visitor_goalie = row[8].strip() if len(row) > 8 else ""
                 home_goalie = row[9].strip() if len(row) > 9 else ""

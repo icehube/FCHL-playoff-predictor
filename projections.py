@@ -37,6 +37,7 @@ def project_skater(
         "position": player["position"],
         "fchl_team": player["fchl_team"],
         "nhl_team": "",
+        "remaining_games": 0,
         "proj_goals": 0.0,
         "proj_assists": 0.0,
         "proj_wins": 0.0,
@@ -53,6 +54,7 @@ def project_skater(
     if gp <= 0:
         base["nhl_team"] = s["nhl_team"]
         base["found_in_stats"] = True
+        base["remaining_games"] = team_remaining.get(s["nhl_team"], 0)
         return base
 
     remaining = team_remaining.get(s["nhl_team"], 0)
@@ -66,6 +68,7 @@ def project_skater(
     return {
         **base,
         "nhl_team": s["nhl_team"],
+        "remaining_games": remaining,
         "proj_goals": proj_goals,
         "proj_assists": proj_assists,
         "proj_pts": proj_pts,
@@ -92,6 +95,7 @@ def project_goalie(
         "position": player["position"],
         "fchl_team": player["fchl_team"],
         "nhl_team": "",
+        "remaining_games": 0,
         "proj_goals": 0.0,
         "proj_assists": 0.0,
         "proj_wins": 0.0,
@@ -118,6 +122,7 @@ def project_goalie(
     team_rem = team_remaining.get(nhl_team, 0)
 
     base["nhl_team"] = nhl_team
+    base["remaining_games"] = team_rem
     base["found_in_stats"] = True
 
     if starts == 0 or team_comp == 0:
