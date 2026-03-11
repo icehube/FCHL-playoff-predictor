@@ -180,33 +180,8 @@
     "fchl_team": "GVR"
   },
   {
-    "name": "Joel Farabee",
-    "position": "F",
-    "fchl_team": "GVR"
-  },
-  {
-    "name": "Andre Burakovsky",
-    "position": "F",
-    "fchl_team": "GVR"
-  },
-  {
-    "name": "Kasperi Kapanen",
-    "position": "F",
-    "fchl_team": "GVR"
-  },
-  {
-    "name": "Dawson Mercer",
-    "position": "F",
-    "fchl_team": "GVR"
-  },
-  {
     "name": "Pavel Dorofeyev",
     "position": "F",
-    "fchl_team": "GVR"
-  },
-  {
-    "name": "Erik Karlsson",
-    "position": "D",
     "fchl_team": "GVR"
   },
   {
@@ -232,11 +207,6 @@
   {
     "name": "Samuel Girard",
     "position": "D",
-    "fchl_team": "GVR"
-  },
-  {
-    "name": "Frederik Andersen",
-    "position": "G",
     "fchl_team": "GVR"
   },
   {
@@ -346,11 +316,6 @@
   },
   {
     "name": "Brock Nelson",
-    "position": "F",
-    "fchl_team": "ZSK"
-  },
-  {
-    "name": "Sean Monahan",
     "position": "F",
     "fchl_team": "ZSK"
   },
@@ -598,5 +563,40 @@
     "name": "Jacob Trouba",
     "position": "D",
     "fchl_team": "BOT"
+  },
+  {
+    "name": "Yaroslav Askarov",
+    "position": "G",
+    "fchl_team": "GVR"
+  },
+  {
+    "name": "John Klingberg",
+    "position": "D",
+    "fchl_team": "GVR"
+  },
+  {
+    "name": "Jason Zucker",
+    "position": "F",
+    "fchl_team": "GVR"
+  },
+  {
+    "name": "Valeri Nichushkin",
+    "position": "F",
+    "fchl_team": "GVR"
+  },
+  {
+    "name": "Jack Hughes",
+    "position": "F",
+    "fchl_team": "GVR"
+  },
+  {
+    "name": "Mats Zuccarello",
+    "position": "F",
+    "fchl_team": "GVR"
+  },
+  {
+    "name": "Anze Kopitar",
+    "position": "F",
+    "fchl_team": "ZSK"
   }
 ]

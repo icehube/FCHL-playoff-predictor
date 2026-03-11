@@ -215,8 +215,8 @@ for _csv_path, _label in [(SKATERS_CSV, "Skaters"), (GOALIES_CSV, "Goalies")]:
 # Tabs
 # ---------------------------------------------------------------------------
 
-tab1, tab2, tab3, tab4 = st.tabs(
-    ["📊 Standings", "👤 Player Projections", "🔧 Roster Builder", "📈 Progress Tracker"]
+tab1, tab2, tab3, tab4, tab5 = st.tabs(
+    ["📊 Standings", "👤 Player Projections", "🔧 Roster Builder", "📈 Progress Tracker", "🔄 Trade Simulator"]
 )
 
 # ---------------------------------------------------------------------------
@@ -488,6 +488,8 @@ with tab3:
             st.session_state.roster.append(new_player)
             # Exact match since the name came directly from the stats dict keys
             st.session_state.player_lookup[add_name] = add_name
+            # Jump the edit-team selector to the team the player was added to
+            st.session_state.edit_team_select = add_team
             st.rerun()
 
     # --- Edit existing team ---
@@ -695,3 +697,169 @@ with tab4:
                 progress_history = {"snapshots": []}
                 save_history(progress_history)
                 st.rerun()
+
+# ---------------------------------------------------------------------------
+# Tab 5 — Trade Simulator
+# ---------------------------------------------------------------------------
+
+with tab5:
+    st.subheader("Trade Simulator — BOT")
+    st.caption(
+        "Evaluate trades for BOT without changing the actual roster. "
+        "Select players to send away and bring in, then see the projected impact."
+    )
+
+    # --- Baseline: BOT projected remaining points ---
+    trade_proj_base = project_all_players(
+        st.session_state.roster,
+        st.session_state.player_lookup,
+        skater_stats,
+        goalie_stats,
+        schedule_data,
+    )
+    bot_base_pts = sum(
+        p["proj_pts"] for p in trade_proj_base if p["fchl_team"] == "BOT"
+    )
+
+    # --- Player selection ---
+    bot_roster = [p for p in st.session_state.roster if p["fchl_team"] == "BOT"]
+    bot_names = [f"{p['name']} ({p['position']})" for p in bot_roster]
+
+    out_col, in_col = st.columns(2)
+
+    with out_col:
+        st.markdown("**Players Out** (leaving BOT)")
+        players_out = st.multiselect(
+            "Select players to trade away",
+            bot_names,
+            key="trade_players_out",
+            label_visibility="collapsed",
+        )
+
+    with in_col:
+        st.markdown("**Players In** (coming to BOT)")
+        # Build available list: all stats players not currently on BOT
+        all_stat_skaters = {}
+        for name, stats in skater_stats.items():
+            all_stat_skaters[name] = "D" if stats.get("position") == "D" else "F"
+        all_stat_goalies = {name: "G" for name in goalie_stats}
+        all_stat_pool = {**all_stat_skaters, **all_stat_goalies}
+
+        bot_stat_keys = {
+            st.session_state.player_lookup.get(p["name"])
+            for p in bot_roster
+            if st.session_state.player_lookup.get(p["name"])
+        }
+        available_in = sorted(
+            name for name in all_stat_pool if name not in bot_stat_keys
+        )
+        available_in_labels = [
+            f"{name} ({all_stat_pool[name]})" for name in available_in
+        ]
+
+        players_in = st.multiselect(
+            "Select players to acquire",
+            available_in_labels,
+            key="trade_players_in",
+            label_visibility="collapsed",
+        )
+
+    # --- Compute post-trade projection ---
+    # Parse selected names back out
+    out_names = {s.rsplit(" (", 1)[0] for s in players_out}
+    in_entries = []
+    for label in players_in:
+        name, pos_part = label.rsplit(" (", 1)
+        pos = pos_part.rstrip(")")
+        in_entries.append({"name": name, "position": pos})
+
+    # Build modified roster
+    trade_roster = [
+        p for p in st.session_state.roster
+        if not (p["fchl_team"] == "BOT" and p["name"] in out_names)
+    ]
+    trade_lookup = dict(st.session_state.player_lookup)
+    for entry in in_entries:
+        trade_roster.append({
+            "raw": f"{entry['position']} {entry['name']} (trade-sim)",
+            "name": entry["name"],
+            "position": entry["position"],
+            "fchl_team": "BOT",
+        })
+        trade_lookup[entry["name"]] = entry["name"]
+
+    trade_proj_after = project_all_players(
+        trade_roster,
+        trade_lookup,
+        skater_stats,
+        goalie_stats,
+        schedule_data,
+    )
+    bot_after_pts = sum(
+        p["proj_pts"] for p in trade_proj_after if p["fchl_team"] == "BOT"
+    )
+
+    # --- Results ---
+    st.divider()
+
+    delta = bot_after_pts - bot_base_pts
+    has_trade = bool(players_out or players_in)
+
+    r1, r2, r3 = st.columns(3)
+    with r1:
+        st.metric("Current Proj Remaining", f"{bot_base_pts:.1f}")
+    with r2:
+        st.metric(
+            "After Trade",
+            f"{bot_after_pts:.1f}" if has_trade else "—",
+            delta=f"{delta:+.1f} pts" if has_trade else None,
+            delta_color="normal",
+        )
+    with r3:
+        standings_base = compute_standings(trade_proj_base, current_pts)
+        bot_total_base = next(s["proj_total"] for s in standings_base if s["fchl_team"] == "BOT")
+        if has_trade:
+            standings_after = compute_standings(trade_proj_after, current_pts)
+            bot_total_after = next(s["proj_total"] for s in standings_after if s["fchl_team"] == "BOT")
+            st.metric(
+                "Proj Season Total",
+                f"{bot_total_after:.1f}",
+                delta=f"{bot_total_after - bot_total_base:+.1f} pts",
+                delta_color="normal",
+            )
+        else:
+            st.metric("Proj Season Total", f"{bot_total_base:.1f}")
+
+    # --- Breakdown tables ---
+    if has_trade:
+        st.divider()
+        b1, b2 = st.columns(2)
+
+        if players_out:
+            with b1:
+                st.markdown("**Losing**")
+                out_rows = []
+                for p in trade_proj_base:
+                    if p["fchl_team"] == "BOT" and p["name"] in out_names:
+                        out_rows.append({
+                            "Player": p["name"],
+                            "Pos": p["position"],
+                            "Proj Pts": round(p["proj_pts"], 1),
+                        })
+                out_rows.sort(key=lambda r: -r["Proj Pts"])
+                st.dataframe(pd.DataFrame(out_rows), hide_index=True, width="stretch")
+
+        if players_in:
+            with b2:
+                st.markdown("**Gaining**")
+                in_names = {e["name"] for e in in_entries}
+                in_rows = []
+                for p in trade_proj_after:
+                    if p["fchl_team"] == "BOT" and p["name"] in in_names:
+                        in_rows.append({
+                            "Player": p["name"],
+                            "Pos": p["position"],
+                            "Proj Pts": round(p["proj_pts"], 1),
+                        })
+                in_rows.sort(key=lambda r: -r["Proj Pts"])
+                st.dataframe(pd.DataFrame(in_rows), hide_index=True, width="stretch")

@@ -49,12 +49,12 @@ NHL_TEAM_MAP: dict[str, str] = {
 }
 
 DEFAULT_FCHL_POINTS: dict[str, int] = {
-    "LPT": 998,
-    "GVR": 989,
-    "ZSK": 953,
-    "BOT": 927,
-    "SRL": 918,
-    "MAC": 901,
+    "LPT": 999,
+    "GVR": 991,
+    "ZSK": 957,
+    "BOT": 929,
+    "SRL": 919,
+    "MAC": 904,
     
 }
 
@@ -118,6 +118,7 @@ def load_skater_stats(path: str) -> dict[str, dict]:
         stats[name] = {
             "name": name,
             "nhl_team": str(row["team"]).strip(),
+            "position": str(row.get("position", "")).strip(),
             "games_played": float(row["games_played"]),
             "goals": float(row.get("I_F_goals", 0) or 0),
             "primary_assists": float(row.get("I_F_primaryAssists", 0) or 0),
