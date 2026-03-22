@@ -55,27 +55,7 @@
     "fchl_team": "LPT"
   },
   {
-    "name": "Mark Scheifele",
-    "position": "F",
-    "fchl_team": "LPT"
-  },
-  {
-    "name": "Sidney Crosby",
-    "position": "F",
-    "fchl_team": "LPT"
-  },
-  {
-    "name": "Filip Forsberg",
-    "position": "F",
-    "fchl_team": "LPT"
-  },
-  {
     "name": "Alex Tuch",
-    "position": "F",
-    "fchl_team": "LPT"
-  },
-  {
-    "name": "Sam Bennett",
     "position": "F",
     "fchl_team": "LPT"
   },
@@ -100,22 +80,7 @@
     "fchl_team": "LPT"
   },
   {
-    "name": "Cole Sillinger",
-    "position": "F",
-    "fchl_team": "LPT"
-  },
-  {
-    "name": "Roman Josi",
-    "position": "D",
-    "fchl_team": "LPT"
-  },
-  {
     "name": "Mikhail Sergachev",
-    "position": "D",
-    "fchl_team": "LPT"
-  },
-  {
-    "name": "MacKenzie Weegar",
     "position": "D",
     "fchl_team": "LPT"
   },
@@ -130,17 +95,7 @@
     "fchl_team": "LPT"
   },
   {
-    "name": "Ivan Provorov",
-    "position": "D",
-    "fchl_team": "LPT"
-  },
-  {
     "name": "Mackenzie Blackwood",
-    "position": "G",
-    "fchl_team": "LPT"
-  },
-  {
-    "name": "Dustin Wolf",
     "position": "G",
     "fchl_team": "LPT"
   },
@@ -390,27 +345,12 @@
     "fchl_team": "MAC"
   },
   {
-    "name": "Alex DeBrincat",
-    "position": "F",
-    "fchl_team": "MAC"
-  },
-  {
     "name": "Alex Ovechkin",
     "position": "F",
     "fchl_team": "MAC"
   },
   {
-    "name": "Tomas Hertl",
-    "position": "F",
-    "fchl_team": "MAC"
-  },
-  {
     "name": "Patrick Kane",
-    "position": "F",
-    "fchl_team": "MAC"
-  },
-  {
-    "name": "Jamie Benn",
     "position": "F",
     "fchl_team": "MAC"
   },
@@ -447,21 +387,6 @@
   {
     "name": "Brent Burns",
     "position": "D",
-    "fchl_team": "MAC"
-  },
-  {
-    "name": "Mike Matheson",
-    "position": "D",
-    "fchl_team": "MAC"
-  },
-  {
-    "name": "Jeff Petry",
-    "position": "D",
-    "fchl_team": "MAC"
-  },
-  {
-    "name": "Andrei Vasilevskiy",
-    "position": "G",
     "fchl_team": "MAC"
   },
   {
@@ -535,11 +460,6 @@
     "fchl_team": "BOT"
   },
   {
-    "name": "Victor Hedman",
-    "position": "D",
-    "fchl_team": "MAC"
-  },
-  {
     "name": "Darren Raddysh",
     "position": "D",
     "fchl_team": "BOT"
@@ -598,5 +518,85 @@
     "name": "Anze Kopitar",
     "position": "F",
     "fchl_team": "ZSK"
+  },
+  {
+    "name": "Alex DeBrincat",
+    "position": "F",
+    "fchl_team": "LPT"
+  },
+  {
+    "name": "Tomas Hertl",
+    "position": "F",
+    "fchl_team": "LPT"
+  },
+  {
+    "name": "Mason McTavish",
+    "position": "F",
+    "fchl_team": "LPT"
+  },
+  {
+    "name": "Jamie Benn",
+    "position": "F",
+    "fchl_team": "LPT"
+  },
+  {
+    "name": "Andrei Vasilevskiy",
+    "position": "G",
+    "fchl_team": "LPT"
+  },
+  {
+    "name": "Kiefer Sherwood",
+    "position": "F",
+    "fchl_team": "LPT"
+  },
+  {
+    "name": "Victor Hedman",
+    "position": "D",
+    "fchl_team": "LPT"
+  },
+  {
+    "name": "John Carlson",
+    "position": "D",
+    "fchl_team": "LPT"
+  },
+  {
+    "name": "Mike Matheson",
+    "position": "D",
+    "fchl_team": "LPT"
+  },
+  {
+    "name": "Charlie Lindgren",
+    "position": "G",
+    "fchl_team": "MAC"
+  },
+  {
+    "name": "Roman Josi",
+    "position": "D",
+    "fchl_team": "MAC"
+  },
+  {
+    "name": "MacKenzie Weegar",
+    "position": "D",
+    "fchl_team": "MAC"
+  },
+  {
+    "name": "Ivan Provorov",
+    "position": "D",
+    "fchl_team": "MAC"
+  },
+  {
+    "name": "Sam Bennett",
+    "position": "F",
+    "fchl_team": "MAC"
+  },
+  {
+    "name": "Josh Doan",
+    "position": "F",
+    "fchl_team": "MAC"
+  },
+  {
+    "name": "Mark Scheifele",
+    "position": "F",
+    "fchl_team": "MAC"
   }
 ]

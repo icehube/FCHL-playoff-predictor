@@ -122,15 +122,17 @@ def project_goalie(
     team_rem = team_remaining.get(nhl_team, 0)
 
     base["nhl_team"] = nhl_team
-    base["remaining_games"] = team_rem
     base["found_in_stats"] = True
 
     if starts == 0 or team_comp == 0:
         return base
 
+    start_share = starts / team_comp
+    remaining_starts = start_share * team_rem
+    base["remaining_games"] = round(remaining_starts)
+
     win_rate = wins / starts
     shutout_rate = shutouts / starts
-    remaining_starts = (starts / team_comp) * team_rem
 
     proj_wins = win_rate * remaining_starts
     proj_shutouts = shutout_rate * remaining_starts

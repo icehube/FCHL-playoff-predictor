@@ -2,7 +2,10 @@
 data_loader.py — CSV parsing, name matching, and schedule stat derivation.
 """
 import csv
+import json
 import re
+import time
+import urllib.request
 from datetime import date
 from pathlib import Path
 
@@ -49,12 +52,12 @@ NHL_TEAM_MAP: dict[str, str] = {
 }
 
 DEFAULT_FCHL_POINTS: dict[str, int] = {
-    "LPT": 999,
-    "GVR": 991,
-    "ZSK": 957,
-    "BOT": 929,
-    "SRL": 919,
-    "MAC": 904,
+    "GVR": 1087,
+    "LPT": 1073,
+    "ZSK": 1052,
+    "BOT": 1019,
+    "SRL": 996,
+    "MAC": 971,
     
 }
 
@@ -248,6 +251,112 @@ def load_schedule(path: str) -> dict:
         "team_remaining": team_remaining,
         "goalie_schedule_stats": goalie_stats,
     }
+
+
+# ---------------------------------------------------------------------------
+# NHL API — live goalie stats & standings
+# ---------------------------------------------------------------------------
+
+NHL_SEASON_ID = "20252026"
+STALE_SECONDS = 24 * 60 * 60  # 1 day
+
+_NHL_GOALIE_URL = (
+    "https://api.nhle.com/stats/rest/en/goalie/summary"
+    "?isAggregate=false&isGame=false"
+    "&sort=%5B%7B%22property%22%3A%22wins%22%2C%22direction%22%3A%22DESC%22%7D%5D"
+    f"&cayenneExp=seasonId%3D{NHL_SEASON_ID}%20and%20gameTypeId%3D2"
+    "&limit=-1"
+)
+
+_NHL_STANDINGS_URL = "https://api-web.nhle.com/v1/standings/{date}"
+
+
+def _fetch_json(url: str) -> dict:
+    """Fetch JSON from a URL, returning parsed dict."""
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+    with urllib.request.urlopen(req, timeout=15) as resp:
+        return json.loads(resp.read())
+
+
+def fetch_nhl_goalie_stats(cache_path: Path) -> dict[str, dict]:
+    """
+    Fetch goalie stats (wins, shutouts, gamesStarted) from the NHL API.
+    Caches to a local JSON file; re-fetches if older than 24h.
+    Returns {goalie_name: {"starts", "wins", "shutouts", "nhl_team"}}.
+    """
+    # Check cache freshness
+    if cache_path.exists():
+        age = time.time() - cache_path.stat().st_mtime
+        if age < STALE_SECONDS:
+            with open(cache_path, encoding="utf-8") as f:
+                return json.load(f)
+
+    try:
+        data = _fetch_json(_NHL_GOALIE_URL)
+    except Exception:
+        # Fall back to cache if API fails
+        if cache_path.exists():
+            with open(cache_path, encoding="utf-8") as f:
+                return json.load(f)
+        return {}
+
+    result: dict[str, dict] = {}
+    for g in data.get("data", []):
+        name = g.get("goalieFullName", "").strip()
+        if not name:
+            continue
+        # teamAbbrevs may be "OTT, COL" for traded goalies — use last
+        team_raw = g.get("teamAbbrevs", "")
+        team = team_raw.split(",")[-1].strip() if team_raw else ""
+        result[name] = {
+            "starts": g.get("gamesStarted", 0),
+            "wins": g.get("wins", 0),
+            "shutouts": g.get("shutouts", 0),
+            "nhl_team": team,
+        }
+
+    with open(cache_path, "w", encoding="utf-8") as f:
+        json.dump(result, f, indent=2)
+
+    return result
+
+
+def fetch_nhl_standings(cache_path: Path) -> tuple[dict[str, int], dict[str, int]]:
+    """
+    Fetch team standings from the NHL API to get games played.
+    Returns (team_completed, team_remaining) dicts keyed by NHL abbreviation.
+    """
+    if cache_path.exists():
+        age = time.time() - cache_path.stat().st_mtime
+        if age < STALE_SECONDS:
+            with open(cache_path, encoding="utf-8") as f:
+                cached = json.load(f)
+                return cached["team_completed"], cached["team_remaining"]
+
+    today = date.today().isoformat()
+    try:
+        data = _fetch_json(_NHL_STANDINGS_URL.format(date=today))
+    except Exception:
+        if cache_path.exists():
+            with open(cache_path, encoding="utf-8") as f:
+                cached = json.load(f)
+                return cached["team_completed"], cached["team_remaining"]
+        return {}, {}
+
+    team_completed: dict[str, int] = {}
+    team_remaining: dict[str, int] = {}
+    for t in data.get("standings", []):
+        abbrev = t.get("teamAbbrev", {}).get("default", "")
+        gp = t.get("gamesPlayed", 0)
+        if abbrev:
+            team_completed[abbrev] = gp
+            team_remaining[abbrev] = 82 - gp
+
+    cached = {"team_completed": team_completed, "team_remaining": team_remaining}
+    with open(cache_path, "w", encoding="utf-8") as f:
+        json.dump(cached, f, indent=2)
+
+    return team_completed, team_remaining
 
 
 # ---------------------------------------------------------------------------

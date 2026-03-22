@@ -21,6 +21,8 @@ from data_loader import (
     DEFAULT_FCHL_POINTS,
     FCHL_TEAMS,
     build_player_lookup,
+    fetch_nhl_goalie_stats,
+    fetch_nhl_standings,
     load_fchl_roster,
     load_goalie_stats,
     load_schedule,
@@ -39,6 +41,9 @@ ROSTER_JSON = BASE_DIR / "data" / "fchl_roster.json"
 SCHEDULE_CSV = str(BASE_DIR / "data" / "nhl-202526-asplayed.csv")
 SKATERS_CSV = BASE_DIR / "data" / "skaters.csv"
 GOALIES_CSV = BASE_DIR / "data" / "goalies.csv"
+
+NHL_GOALIE_CACHE = BASE_DIR / "data" / "nhl_goalie_stats.json"
+NHL_STANDINGS_CACHE = BASE_DIR / "data" / "nhl_team_standings.json"
 
 MONEYPUCK_URLS = {
     SKATERS_CSV: "https://moneypuck.com/moneypuck/playerData/seasonSummary/2025/regular/skaters.csv",
@@ -76,6 +81,19 @@ def get_goalie_stats():
 
 @st.cache_data
 def get_schedule(_today: str):
+    """Build schedule_data from NHL API (goalie stats + standings)."""
+    nhl_goalie_stats = fetch_nhl_goalie_stats(NHL_GOALIE_CACHE)
+    team_completed, team_remaining = fetch_nhl_standings(NHL_STANDINGS_CACHE)
+
+    # If API data is available, use it
+    if nhl_goalie_stats and team_completed:
+        return {
+            "team_completed": team_completed,
+            "team_remaining": team_remaining,
+            "goalie_schedule_stats": nhl_goalie_stats,
+        }
+
+    # Fall back to schedule CSV if API failed
     return load_schedule(SCHEDULE_CSV)
 
 @st.cache_data
@@ -647,7 +665,7 @@ with tab4:
             )
             .properties(height=400)
         )
-        st.altair_chart(chart_proj, use_container_width=True)
+        st.altair_chart(chart_proj, width='stretch')
 
         # Chart 2: Projected vs Actual
         st.markdown("#### Projected vs Actual")
@@ -680,7 +698,7 @@ with tab4:
             )
             .properties(height=400)
         )
-        st.altair_chart(chart_compare, use_container_width=True)
+        st.altair_chart(chart_compare, width='stretch')
 
         # --- History Table ---
         with st.expander("View Snapshot History", expanded=False):
