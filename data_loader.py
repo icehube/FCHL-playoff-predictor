@@ -52,12 +52,12 @@ NHL_TEAM_MAP: dict[str, str] = {
 }
 
 DEFAULT_FCHL_POINTS: dict[str, int] = {
-    "GVR": 1087,
-    "LPT": 1073,
-    "ZSK": 1052,
-    "BOT": 1019,
-    "SRL": 996,
-    "MAC": 971,
+    "GVR": 1125,
+    "LPT": 1110,
+    "ZSK": 1086,
+    "BOT": 1062,
+    "SRL": 1036,
+    "MAC": 1008,
     
 }
 
@@ -67,40 +67,24 @@ FCHL_TEAMS = ["BOT", "GVR", "LPT", "MAC", "SRL", "ZSK"]
 # FCHL Roster
 # ---------------------------------------------------------------------------
 
-def parse_player_name(raw: str) -> tuple[str, str]:
-    """
-    Parse 'F Artemi Panarin 3' → ('F', 'Artemi Panarin').
-    Strips the leading position token and trailing suffix (number or single letter).
-    """
-    parts = raw.strip().split()
-    if len(parts) < 2:
-        return "", raw
-    position = parts[0]
-    suffix = parts[-1]
-    # Suffix is a bare number (e.g. "3", "10") or a single uppercase letter (e.g. "A", "B", "C")
-    is_suffix = suffix.isdigit() or (len(suffix) == 1 and suffix.isalpha() and suffix.isupper())
-    name_parts = parts[1:-1] if (is_suffix and len(parts) > 2) else parts[1:]
-    return position, " ".join(name_parts)
-
-
 def load_fchl_roster(path: str) -> list[dict]:
     """
-    Load 'FCHL Players - Sheet1.csv'.
-    Returns list of dicts: {name, position, fchl_team, raw}.
+    Load FCHL roster from players.csv (exported from FCHL Online).
+    Filters to our 6 FCHL teams and status=='Lineup'.
+    Returns list of dicts: {name, position, fchl_team}.
     """
+    df = pd.read_csv(path, low_memory=False)
+    active = df[df["abb"].isin(FCHL_TEAMS) & (df["status"] == "Lineup")]
+
     players = []
-    df = pd.read_csv(path)
-    for _, row in df.iterrows():
-        raw = str(row["PLAYER"]).strip()
-        team = str(row["TEAM"]).strip()
-        position, name = parse_player_name(raw)
+    for _, row in active.iterrows():
         players.append({
-            "raw": raw,
-            "name": name,
-            "position": position,
-            "fchl_team": team,
+            "name": str(row["name"]).strip(),
+            "position": str(row["position"]).strip(),
+            "fchl_team": str(row["abb"]).strip(),
         })
     return players
+
 
 
 # ---------------------------------------------------------------------------

@@ -36,7 +36,7 @@ from projections import compute_standings, project_all_players
 # ---------------------------------------------------------------------------
 
 BASE_DIR = Path(__file__).parent
-FCHL_CSV = str(BASE_DIR / "data" / "FCHL Players - Sheet1.csv")
+FCHL_CSV = str(BASE_DIR / "data" / "players.csv")
 ROSTER_JSON = BASE_DIR / "data" / "fchl_roster.json"
 SCHEDULE_CSV = str(BASE_DIR / "data" / "nhl-202526-asplayed.csv")
 SKATERS_CSV = BASE_DIR / "data" / "skaters.csv"
@@ -170,24 +170,7 @@ progress_history = load_history()
 # ---------------------------------------------------------------------------
 
 if "roster" not in st.session_state:
-    if ROSTER_JSON.exists():
-        with open(ROSTER_JSON, encoding="utf-8") as _f:
-            _saved = json.load(_f)
-        _required = {"name", "position", "fchl_team"}
-        if isinstance(_saved, list) and all(_required <= set(p.keys()) for p in _saved):
-            st.session_state.roster = [
-                {
-                    "raw": f"{p['position']} {p['name']} (saved)",
-                    "name": p["name"],
-                    "position": p["position"],
-                    "fchl_team": p["fchl_team"],
-                }
-                for p in _saved
-            ]
-        else:
-            st.session_state.roster = list(get_original_roster())
-    else:
-        st.session_state.roster = list(get_original_roster())  # mutable copy
+    st.session_state.roster = list(get_original_roster())
 
 if "player_lookup" not in st.session_state:
     with st.spinner("Building player name index…"):

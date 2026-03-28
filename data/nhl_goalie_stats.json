@@ -1,33 +1,45 @@
 {
   "Andrei Vasilevskiy": {
-    "starts": 47,
-    "wins": 32,
+    "starts": 51,
+    "wins": 35,
     "shutouts": 2,
     "nhl_team": "TBL"
   },
   "Karel Vejmelka": {
-    "starts": 53,
-    "wins": 31,
+    "starts": 55,
+    "wins": 32,
     "shutouts": 2,
     "nhl_team": "UTA"
   },
   "Jake Oettinger": {
-    "starts": 44,
+    "starts": 47,
     "wins": 29,
     "shutouts": 2,
     "nhl_team": "DAL"
   },
   "Lukas Dostal": {
-    "starts": 47,
-    "wins": 28,
+    "starts": 48,
+    "wins": 29,
     "shutouts": 0,
     "nhl_team": "ANA"
   },
   "Jeremy Swayman": {
-    "starts": 45,
-    "wins": 27,
+    "starts": 47,
+    "wins": 28,
     "shutouts": 1,
     "nhl_team": "BOS"
+  },
+  "Ilya Sorokin": {
+    "starts": 47,
+    "wins": 28,
+    "shutouts": 7,
+    "nhl_team": "NYI"
+  },
+  "John Gibson": {
+    "starts": 49,
+    "wins": 27,
+    "shutouts": 4,
+    "nhl_team": "DET"
   },
   "Brandon Bussi": {
     "starts": 33,
@@ -35,221 +47,209 @@
     "shutouts": 2,
     "nhl_team": "CAR"
   },
-  "John Gibson": {
-    "starts": 46,
-    "wins": 26,
-    "shutouts": 4,
-    "nhl_team": "DET"
-  },
-  "Sergei Bobrovsky": {
-    "starts": 46,
-    "wins": 25,
-    "shutouts": 4,
-    "nhl_team": "FLA"
-  },
-  "Filip Gustavsson": {
-    "starts": 42,
-    "wins": 25,
-    "shutouts": 4,
-    "nhl_team": "MIN"
-  },
-  "Ilya Sorokin": {
-    "starts": 43,
-    "wins": 25,
-    "shutouts": 6,
-    "nhl_team": "NYI"
-  },
-  "Scott Wedgewood": {
-    "starts": 37,
-    "wins": 25,
-    "shutouts": 2,
-    "nhl_team": "COL"
-  },
   "Juuse Saros": {
-    "starts": 51,
-    "wins": 24,
+    "starts": 53,
+    "wins": 26,
     "shutouts": 0,
     "nhl_team": "NSH"
   },
+  "Scott Wedgewood": {
+    "starts": 38,
+    "wins": 26,
+    "shutouts": 2,
+    "nhl_team": "COL"
+  },
+  "Filip Gustavsson": {
+    "starts": 44,
+    "wins": 26,
+    "shutouts": 4,
+    "nhl_team": "MIN"
+  },
+  "Sergei Bobrovsky": {
+    "starts": 47,
+    "wins": 26,
+    "shutouts": 4,
+    "nhl_team": "FLA"
+  },
   "Logan Thompson": {
-    "starts": 48,
-    "wins": 24,
+    "starts": 51,
+    "wins": 25,
     "shutouts": 2,
     "nhl_team": "WSH"
   },
   "Jet Greaves": {
-    "starts": 42,
-    "wins": 23,
+    "starts": 45,
+    "wins": 24,
     "shutouts": 2,
     "nhl_team": "CBJ"
   },
-  "Dan Vladar": {
-    "starts": 41,
-    "wins": 22,
-    "shutouts": 0,
-    "nhl_team": "PHI"
-  },
-  "Igor Shesterkin": {
-    "starts": 43,
-    "wins": 22,
-    "shutouts": 1,
-    "nhl_team": "NYR"
-  },
   "Jakub Dobes": {
-    "starts": 33,
-    "wins": 22,
+    "starts": 35,
+    "wins": 24,
     "shutouts": 0,
     "nhl_team": "MTL"
   },
   "Linus Ullmark": {
-    "starts": 39,
-    "wins": 21,
+    "starts": 42,
+    "wins": 23,
     "shutouts": 2,
     "nhl_team": "OTT"
   },
+  "Dan Vladar": {
+    "starts": 43,
+    "wins": 23,
+    "shutouts": 0,
+    "nhl_team": "PHI"
+  },
   "Jacob Markstrom": {
-    "starts": 38,
-    "wins": 21,
+    "starts": 39,
+    "wins": 22,
     "shutouts": 0,
     "nhl_team": "NJD"
   },
+  "Igor Shesterkin": {
+    "starts": 45,
+    "wins": 22,
+    "shutouts": 1,
+    "nhl_team": "NYR"
+  },
   "Stuart Skinner": {
-    "starts": 42,
-    "wins": 20,
+    "starts": 44,
+    "wins": 21,
     "shutouts": 2,
     "nhl_team": "PIT"
   },
+  "Mackenzie Blackwood": {
+    "starts": 30,
+    "wins": 21,
+    "shutouts": 3,
+    "nhl_team": "COL"
+  },
   "Dustin Wolf": {
-    "starts": 48,
-    "wins": 20,
+    "starts": 49,
+    "wins": 21,
     "shutouts": 2,
     "nhl_team": "CGY"
   },
   "Alex Lyon": {
-    "starts": 31,
+    "starts": 33,
     "wins": 20,
     "shutouts": 3,
     "nhl_team": "BUF"
   },
-  "Mackenzie Blackwood": {
-    "starts": 28,
+  "Joel Hofer": {
+    "starts": 36,
     "wins": 19,
-    "shutouts": 3,
-    "nhl_team": "COL"
+    "shutouts": 6,
+    "nhl_team": "STL"
   },
   "Joey Daccord": {
-    "starts": 41,
+    "starts": 43,
     "wins": 19,
     "shutouts": 2,
     "nhl_team": "SEA"
   },
   "Yaroslav Askarov": {
-    "starts": 40,
+    "starts": 41,
     "wins": 19,
     "shutouts": 0,
     "nhl_team": "SJS"
   },
-  "Spencer Knight": {
+  "Darcy Kuemper": {
     "starts": 46,
+    "wins": 18,
+    "shutouts": 3,
+    "nhl_team": "LAK"
+  },
+  "Spencer Knight": {
+    "starts": 48,
     "wins": 18,
     "shutouts": 3,
     "nhl_team": "CHI"
   },
-  "Joel Hofer": {
-    "starts": 34,
-    "wins": 17,
-    "shutouts": 5,
-    "nhl_team": "STL"
-  },
   "Connor Hellebuyck": {
-    "starts": 46,
-    "wins": 17,
+    "starts": 49,
+    "wins": 18,
     "shutouts": 0,
     "nhl_team": "WPG"
   },
-  "Darcy Kuemper": {
-    "starts": 43,
-    "wins": 17,
-    "shutouts": 2,
-    "nhl_team": "LAK"
-  },
   "Ukko-Pekka Luukkonen": {
-    "starts": 26,
-    "wins": 16,
+    "starts": 28,
+    "wins": 17,
     "shutouts": 1,
     "nhl_team": "BUF"
   },
   "Tristan Jarry": {
-    "starts": 26,
-    "wins": 16,
+    "starts": 27,
+    "wins": 17,
     "shutouts": 2,
     "nhl_team": "EDM"
   },
   "Akira Schmid": {
-    "starts": 28,
+    "starts": 29,
     "wins": 16,
     "shutouts": 2,
     "nhl_team": "VGK"
   },
   "Arturs Silovs": {
-    "starts": 32,
-    "wins": 15,
+    "starts": 34,
+    "wins": 16,
     "shutouts": 2,
     "nhl_team": "PIT"
   },
   "Jesper Wallstedt": {
-    "starts": 28,
-    "wins": 14,
+    "starts": 29,
+    "wins": 15,
     "shutouts": 4,
     "nhl_team": "MIN"
   },
+  "Joseph Woll": {
+    "starts": 35,
+    "wins": 15,
+    "shutouts": 2,
+    "nhl_team": "TOR"
+  },
   "David Rittich": {
-    "starts": 26,
+    "starts": 27,
     "wins": 14,
     "shutouts": 2,
     "nhl_team": "NYI"
   },
+  "Jake Allen": {
+    "starts": 31,
+    "wins": 14,
+    "shutouts": 1,
+    "nhl_team": "NJD"
+  },
   "Casey DeSmith": {
-    "starts": 24,
+    "starts": 25,
     "wins": 14,
     "shutouts": 1,
     "nhl_team": "DAL"
   },
-  "Joseph Woll": {
-    "starts": 33,
-    "wins": 14,
-    "shutouts": 2,
-    "nhl_team": "TOR"
-  },
-  "Jake Allen": {
-    "starts": 30,
-    "wins": 13,
-    "shutouts": 1,
-    "nhl_team": "NJD"
-  },
   "Elvis Merzlikins": {
-    "starts": 26,
-    "wins": 13,
+    "starts": 27,
+    "wins": 14,
     "shutouts": 1,
     "nhl_team": "CBJ"
   },
   "Alex Nedeljkovic": {
-    "starts": 26,
+    "starts": 28,
     "wins": 13,
     "shutouts": 0,
     "nhl_team": "SJS"
   },
-  "Frederik Andersen": {
-    "starts": 28,
-    "wins": 12,
-    "shutouts": 0,
-    "nhl_team": "CAR"
-  },
   "Philipp Grubauer": {
-    "starts": 23,
-    "wins": 12,
+    "starts": 24,
+    "wins": 13,
     "shutouts": 0,
     "nhl_team": "SEA"
+  },
+  "Frederik Andersen": {
+    "starts": 30,
+    "wins": 13,
+    "shutouts": 0,
+    "nhl_team": "CAR"
   },
   "Cam Talbot": {
     "starts": 23,
@@ -257,35 +257,47 @@
     "shutouts": 0,
     "nhl_team": "DET"
   },
-  "Anton Forsberg": {
-    "starts": 24,
-    "wins": 11,
-    "shutouts": 2,
-    "nhl_team": "LAK"
-  },
-  "Samuel Ersson": {
-    "starts": 25,
-    "wins": 11,
-    "shutouts": 0,
-    "nhl_team": "PHI"
-  },
-  "Joonas Korpisalo": {
-    "starts": 24,
-    "wins": 11,
-    "shutouts": 1,
-    "nhl_team": "BOS"
-  },
   "Connor Ingram": {
-    "starts": 21,
-    "wins": 11,
+    "starts": 23,
+    "wins": 12,
     "shutouts": 1,
     "nhl_team": "EDM"
   },
   "Eric Comrie": {
-    "starts": 21,
-    "wins": 11,
+    "starts": 22,
+    "wins": 12,
     "shutouts": 0,
     "nhl_team": "WPG"
+  },
+  "Samuel Ersson": {
+    "starts": 26,
+    "wins": 12,
+    "shutouts": 0,
+    "nhl_team": "PHI"
+  },
+  "Joonas Korpisalo": {
+    "starts": 25,
+    "wins": 12,
+    "shutouts": 1,
+    "nhl_team": "BOS"
+  },
+  "Jordan Binnington": {
+    "starts": 35,
+    "wins": 11,
+    "shutouts": 1,
+    "nhl_team": "STL"
+  },
+  "Anton Forsberg": {
+    "starts": 25,
+    "wins": 11,
+    "shutouts": 2,
+    "nhl_team": "LAK"
+  },
+  "Jonas Johansson": {
+    "starts": 21,
+    "wins": 10,
+    "shutouts": 0,
+    "nhl_team": "TBL"
   },
   "Samuel Montembeault": {
     "starts": 23,
@@ -293,17 +305,17 @@
     "shutouts": 0,
     "nhl_team": "MTL"
   },
-  "Jonas Johansson": {
-    "starts": 20,
-    "wins": 10,
+  "Devin Cooley": {
+    "starts": 23,
+    "wins": 9,
     "shutouts": 0,
-    "nhl_team": "TBL"
+    "nhl_team": "CGY"
   },
-  "Jordan Binnington": {
-    "starts": 34,
-    "wins": 10,
-    "shutouts": 1,
-    "nhl_team": "STL"
+  "Ville Husso": {
+    "starts": 16,
+    "wins": 9,
+    "shutouts": 0,
+    "nhl_team": "ANA"
   },
   "Charlie Lindgren": {
     "starts": 19,
@@ -312,10 +324,28 @@
     "nhl_team": "WSH"
   },
   "Daniil Tarasov": {
-    "starts": 23,
+    "starts": 25,
     "wins": 9,
     "shutouts": 0,
     "nhl_team": "FLA"
+  },
+  "Anthony Stolarz": {
+    "starts": 22,
+    "wins": 9,
+    "shutouts": 0,
+    "nhl_team": "TOR"
+  },
+  "Adin Hill": {
+    "starts": 24,
+    "wins": 9,
+    "shutouts": 1,
+    "nhl_team": "VGK"
+  },
+  "Kevin Lankinen": {
+    "starts": 38,
+    "wins": 8,
+    "shutouts": 0,
+    "nhl_team": "VAN"
   },
   "Leevi Meril\u00e4inen": {
     "starts": 19,
@@ -323,11 +353,11 @@
     "shutouts": 0,
     "nhl_team": "OTT"
   },
-  "Kevin Lankinen": {
-    "starts": 35,
+  "Justus Annunen": {
+    "starts": 19,
     "wins": 8,
     "shutouts": 0,
-    "nhl_team": "VAN"
+    "nhl_team": "NSH"
   },
   "Thatcher Demko": {
     "starts": 20,
@@ -335,41 +365,29 @@
     "shutouts": 1,
     "nhl_team": "VAN"
   },
-  "Anthony Stolarz": {
-    "starts": 21,
-    "wins": 8,
-    "shutouts": 0,
-    "nhl_team": "TOR"
-  },
-  "Devin Cooley": {
-    "starts": 21,
-    "wins": 8,
-    "shutouts": 0,
-    "nhl_team": "CGY"
-  },
-  "Adin Hill": {
-    "starts": 21,
-    "wins": 8,
-    "shutouts": 1,
-    "nhl_team": "VGK"
-  },
   "Colten Ellis": {
     "starts": 12,
     "wins": 7,
     "shutouts": 0,
     "nhl_team": "BUF"
   },
-  "Justus Annunen": {
-    "starts": 17,
+  "Arvid Soderblom": {
+    "starts": 22,
     "wins": 7,
-    "shutouts": 0,
-    "nhl_team": "NSH"
+    "shutouts": 1,
+    "nhl_team": "CHI"
   },
-  "Ville Husso": {
-    "starts": 14,
-    "wins": 7,
-    "shutouts": 0,
-    "nhl_team": "ANA"
+  "James Reimer": {
+    "starts": 11,
+    "wins": 6,
+    "shutouts": 1,
+    "nhl_team": "OTT"
+  },
+  "Jacob Fowler": {
+    "starts": 13,
+    "wins": 6,
+    "shutouts": 1,
+    "nhl_team": "MTL"
   },
   "Pyotr Kochetkov": {
     "starts": 8,
@@ -377,29 +395,23 @@
     "shutouts": 1,
     "nhl_team": "CAR"
   },
-  "Arvid Soderblom": {
-    "starts": 20,
-    "wins": 6,
-    "shutouts": 1,
-    "nhl_team": "CHI"
-  },
   "Vitek Vanecek": {
-    "starts": 17,
+    "starts": 18,
     "wins": 5,
     "shutouts": 1,
     "nhl_team": "UTA"
-  },
-  "Carter Hart": {
-    "starts": 12,
-    "wins": 5,
-    "shutouts": 0,
-    "nhl_team": "VGK"
   },
   "Dennis Hildeby": {
     "starts": 13,
     "wins": 5,
     "shutouts": 1,
     "nhl_team": "TOR"
+  },
+  "Carter Hart": {
+    "starts": 12,
+    "wins": 5,
+    "shutouts": 0,
+    "nhl_team": "VGK"
   },
   "Nikita Tolopilo": {
     "starts": 12,
@@ -413,23 +425,11 @@
     "shutouts": 2,
     "nhl_team": "NYR"
   },
-  "Jacob Fowler": {
-    "starts": 12,
-    "wins": 5,
-    "shutouts": 1,
-    "nhl_team": "MTL"
-  },
   "Calvin Pickard": {
     "starts": 13,
     "wins": 5,
     "shutouts": 0,
     "nhl_team": "EDM"
-  },
-  "James Reimer": {
-    "starts": 9,
-    "wins": 5,
-    "shutouts": 1,
-    "nhl_team": "OTT"
   },
   "Petr Mrazek": {
     "starts": 8,
@@ -461,12 +461,6 @@
     "shutouts": 0,
     "nhl_team": "VGK"
   },
-  "Sergei Murashov": {
-    "starts": 4,
-    "wins": 1,
-    "shutouts": 1,
-    "nhl_team": "PIT"
-  },
   "Nico Daws": {
     "starts": 1,
     "wins": 1,
@@ -479,11 +473,23 @@
     "shutouts": 1,
     "nhl_team": "COL"
   },
+  "Dylan Garand": {
+    "starts": 2,
+    "wins": 1,
+    "shutouts": 0,
+    "nhl_team": "NYR"
+  },
   "Mads Sogaard": {
     "starts": 1,
     "wins": 1,
     "shutouts": 0,
     "nhl_team": "OTT"
+  },
+  "Sergei Murashov": {
+    "starts": 4,
+    "wins": 1,
+    "shutouts": 1,
+    "nhl_team": "PIT"
   },
   "Spencer Martin": {
     "starts": 4,
@@ -533,17 +539,17 @@
     "shutouts": 0,
     "nhl_team": "WPG"
   },
-  "Pheonix Copley": {
-    "starts": 1,
-    "wins": 0,
-    "shutouts": 0,
-    "nhl_team": "LAK"
-  },
   "Vyacheslav Buteyets": {
     "starts": 0,
     "wins": 0,
     "shutouts": 0,
     "nhl_team": "ANA"
+  },
+  "Pheonix Copley": {
+    "starts": 1,
+    "wins": 0,
+    "shutouts": 0,
+    "nhl_team": "LAK"
   },
   "Jiri Patera": {
     "starts": 1,
