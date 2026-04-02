@@ -52,13 +52,12 @@ NHL_TEAM_MAP: dict[str, str] = {
 }
 
 DEFAULT_FCHL_POINTS: dict[str, int] = {
-    "GVR": 1125,
-    "LPT": 1110,
-    "ZSK": 1086,
-    "BOT": 1062,
-    "SRL": 1036,
-    "MAC": 1008,
-    
+    "GVR": 1172,
+    "LPT": 1157,
+    "ZSK": 1117,
+    "BOT": 1087,
+    "SRL": 1075,
+    "MAC": 1041,
 }
 
 FCHL_TEAMS = ["BOT", "GVR", "LPT", "MAC", "SRL", "ZSK"]
